@@ -3,12 +3,12 @@
 DESTDIR ?= /
 
 build:
-	gcc -Wall -O3 -flto bluebinder.c `pkg-config --cflags libgbinder` `pkg-config --libs libgbinder` -lsystemd -o bluebinder
+	gcc -Wall -O3 -flto bluebinder.c `pkg-config --cflags libgbinder` `pkg-config --libs libgbinder` -o bluebinder
 
 install:
 	mkdir -p $(DESTDIR)/usr/sbin
 	cp bluebinder $(DESTDIR)/usr/sbin
 
 clean:
-	rm bluebinder
+	if test -a "bluebinder"; then rm bluebinder; fi;
 
