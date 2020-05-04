@@ -397,7 +397,7 @@ bluebinder_callbacks_transact(
 
             return gbinder_local_reply_append_int32(gbinder_local_object_new_reply(obj), 0);
         } else if (code == 2 || code == 3 || code == 4) {
-            unsigned int count, elemsize;
+            gsize count, elemsize;
             GBinderReader reader;
             const uint8_t *vec;
             uint8_t *packet;
