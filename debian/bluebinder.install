@@ -1,2 +1,2 @@
 bluebinder_*.sh usr/bin/droid
-bluebinder.conf etc/init
+bluebinder.service lib/systemd/system
