@@ -1,9 +1,16 @@
 # TODO: this is a bit minimalistic isn't it?
 
+USE_SYSTEMD ?= 1
+
 DESTDIR ?= /
 
+DEPEND_LIBS = libgbinder
+ifeq ($(USE_SYSTEMD),1)
+DEPEND_LIBS += libsystemd
+endif
+
 build:
-	gcc -Wall -O3 -flto bluebinder.c `pkg-config --cflags libgbinder` `pkg-config --libs libgbinder` -o bluebinder
+	gcc -Wall -O3 -flto bluebinder.c `pkg-config --cflags --libs $(DEPEND_LIBS)` -DUSE_SYSTEMD=$(USE_SYSTEMD) -o bluebinder
 
 install:
 	mkdir -p $(DESTDIR)/usr/sbin
