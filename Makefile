@@ -4,7 +4,7 @@ USE_SYSTEMD ?= 1
 
 DESTDIR ?= /
 
-DEPEND_LIBS = libgbinder
+DEPEND_LIBS = libgbinder glib-2.0
 ifeq ($(USE_SYSTEMD),1)
 DEPEND_LIBS += libsystemd
 endif

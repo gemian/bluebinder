@@ -9,7 +9,7 @@ Build-Depends:
  libgbinder-dev (>= 1.0.7),
  libbluetooth-dev,
  libsystemd-dev
-Standards-Version: 3.8.4
+Standards-Version: 4.3.0
 
 Package: bluebinder
 Section: binary
